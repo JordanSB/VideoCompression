@@ -40,11 +40,10 @@ public class VideoResolutionChanger {
 
     // parameters for the video encoder
     private static final String OUTPUT_VIDEO_MIME_TYPE = "video/avc";           // H.264 Advanced Video Coding
-    private static final int OUTPUT_VIDEO_BIT_RATE = 2000000;                   // 2Mbps
+    private static final int OUTPUT_VIDEO_BIT_RATE = 3000000;                   // 2Mbps
     private static final int OUTPUT_VIDEO_FRAME_RATE = 30;                      //30fps
     private static final int OUTPUT_VIDEO_IFRAME_INTERVAL = 10;                 // 10 seconds between I-frames
-    private static final int OUTPUT_VIDEO_COLOR_FORMAT =
-            MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface;
+    private static final int OUTPUT_VIDEO_COLOR_FORMAT = MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface;
 
 
     // parameters for the audio encoder
