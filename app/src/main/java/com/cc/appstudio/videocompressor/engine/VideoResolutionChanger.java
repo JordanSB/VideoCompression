@@ -1,6 +1,5 @@
 package com.cc.appstudio.videocompressor.engine;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.media.MediaCodec;
@@ -23,15 +22,10 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * Created by afali on 7/31/17.
- */
-@TargetApi(18)
 public class VideoResolutionChanger {
 
     private static final String TAG = VideoResolutionChanger.class.getSimpleName();
     private static final boolean VERBOSE = false; // lots of logging
-
 
     /**
      * How long to wait for the next buffer to become available.
@@ -50,8 +44,7 @@ public class VideoResolutionChanger {
     private static final String OUTPUT_AUDIO_MIME_TYPE = "audio/mp4a-latm";     // Advanced Audio Coding
     private static final int OUTPUT_AUDIO_CHANNEL_COUNT = 2;                    // Must match the input stream.
     private static final int OUTPUT_AUDIO_BIT_RATE = 128 * 1024;
-    private static final int OUTPUT_AUDIO_AAC_PROFILE =
-            MediaCodecInfo.CodecProfileLevel.AACObjectHE;
+    private static final int OUTPUT_AUDIO_AAC_PROFILE = MediaCodecInfo.CodecProfileLevel.AACObjectHE;
     private static final int OUTPUT_AUDIO_SAMPLE_RATE_HZ = 44100;               // Must match the input stream.
 
     private int mWidth = 1280;
@@ -170,8 +163,7 @@ public class VideoResolutionChanger {
 
             // We avoid the device-specific limitations on width and height by using values
             // that are multiples of 16, which all tested devices seem to be able to handle.
-            MediaFormat outputVideoFormat =
-                    MediaFormat.createVideoFormat(OUTPUT_VIDEO_MIME_TYPE, mWidth, mHeight);
+            MediaFormat outputVideoFormat = MediaFormat.createVideoFormat(OUTPUT_VIDEO_MIME_TYPE, mWidth, mHeight);
 
             // Set some properties. Failing to specify some of these can cause the MediaCodec
             // configure() call to throw an unhelpful exception.
